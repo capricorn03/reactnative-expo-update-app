@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Horse Racing: The Kentucky Derby",
+    "content": "Excitement builds for the annual horse racing spectacle!",
+    "published": true
+  },
+  {
+    "id": "2",
+    "title": "Horses of the World: Breeds and Characteristics",
+    "content": "Learn about the diverse and fascinating world of horse breeds.",
+    "published": true
+  },
+  {
+    "id": "3",
+    "title": "Horseback Riding: A Guide for Beginners",
+    "content": "Discover the joys of horseback riding with this beginner-friendly guide.",
+    "published": true
+  }
+]

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
 import Colors from '@/lib/Colors';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const _layout = () => {
   return (
@@ -10,8 +12,24 @@ const _layout = () => {
         tabBarActiveTintColor: Colors.primary,
       }}
     >
-      <Tabs.Screen name="home" />
-      <Tabs.Screen name="updates" />
+      <Tabs.Screen
+        name="home"
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="home" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="updates"
+        options={{
+          tabBarLabel: 'updates',
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="newspaper-outline" size={24} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 };

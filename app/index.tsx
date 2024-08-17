@@ -18,6 +18,7 @@ const App = () => {
 
   return (
     <View className="flex-1 items-center justify-center">
+      
       <CustomButton onPress={() => router.push('/home')} title="Get Started" />
     </View>
   );
