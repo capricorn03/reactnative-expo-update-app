@@ -11,14 +11,13 @@ const App = () => {
     if (hasShareIntent) {
       // we want to handle share intent event in a specific page
       router.replace({
-        pathname: 'shareintent',
+        pathname: 'share2',
       });
     }
   }, [hasShareIntent]);
 
   return (
     <View className="flex-1 items-center justify-center">
-      
       <CustomButton onPress={() => router.push('/home')} title="Get Started" />
     </View>
   );

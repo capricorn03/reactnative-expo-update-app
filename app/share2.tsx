@@ -1,13 +1,41 @@
-import { Button, Image, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, View, Alert } from 'react-native';
 
 import { useRouter } from 'expo-router';
 import { useShareIntentContext } from 'expo-share-intent';
 import PostRequestExample from '@/components/PostRequestExample';
+import { useEffect } from 'react';
 
 export default function ShareIntent() {
   const router = useRouter();
   const { hasShareIntent, shareIntent, error, resetShareIntent } =
     useShareIntentContext();
+
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ topic: shareIntent.text }),
+  };
+
+  const postExample = async () => {
+    try {
+      await fetch(
+        'https://nextjs-restapi-beta.vercel.app/api/update',
+        requestOptions
+      ).then((response) => {
+        response.json().then((data) => {
+          Alert.alert('Post created at : ', data.createdAt);
+        });
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    if (hasShareIntent) {
+      postExample();
+    }
+  }, [hasShareIntent]); // Add dependency for useEffect to run when hasShareIntent changes
 
   return (
     <View style={styles.container}>
