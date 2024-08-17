@@ -1,4 +1,11 @@
-import { Button, Image, StyleSheet, Text, View, Alert } from 'react-native';
+import {
+  Button,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  ToastAndroid,
+} from 'react-native';
 
 import { useRouter } from 'expo-router';
 import { useShareIntentContext } from 'expo-share-intent';
@@ -23,7 +30,7 @@ export default function ShareIntent() {
         requestOptions
       ).then((response) => {
         response.json().then((data) => {
-          Alert.alert('Post created at : ', data.createdAt);
+          ToastAndroid.show('News is saved sucessfully', ToastAndroid.SHORT);
         });
       });
     } catch (error) {

@@ -11,7 +11,7 @@ const App = () => {
     if (hasShareIntent) {
       // we want to handle share intent event in a specific page
       router.replace({
-        pathname: 'share2',
+        pathname: 'updates',
       });
     }
   }, [hasShareIntent]);
