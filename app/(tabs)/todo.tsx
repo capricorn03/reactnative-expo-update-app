@@ -4,10 +4,11 @@ import React from 'react';
 import news from './news.json';
 import { router } from 'expo-router';
 
-const HomeScreen = () => {
+const updates = () => {
   return (
     <View className="flex-1 p-4">
       <Text className="text-2xl font-bold mb-4">News Feed</Text>
+
       <FlatList
         data={news}
         keyExtractor={(item) => item.title}
@@ -21,4 +22,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default updates;

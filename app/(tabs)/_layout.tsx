@@ -13,7 +13,7 @@ const _layout = () => {
       }}
     >
       <Tabs.Screen
-        name="home"
+        name="index"
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
@@ -22,11 +22,20 @@ const _layout = () => {
         }}
       />
       <Tabs.Screen
-        name="updates"
+        name="news"
         options={{
-          tabBarLabel: 'updates',
+          tabBarLabel: 'News',
           tabBarIcon: ({ color }) => (
             <Ionicons name="newspaper-outline" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="todo"
+        options={{
+          tabBarLabel: 'Todo',
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="star" size={24} color={color} />
           ),
         }}
       />
