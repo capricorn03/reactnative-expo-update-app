@@ -35,7 +35,7 @@ const _layout = () => {
         options={{
           tabBarLabel: 'Todo',
           tabBarIcon: ({ color }) => (
-            <AntDesign name="star" size={24} color={color} />
+            <AntDesign name="heart" size={24} color={color} />
           ),
         }}
       />

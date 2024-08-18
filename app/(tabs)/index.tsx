@@ -1,4 +1,4 @@
-import { View, Text, ToastAndroid } from 'react-native';
+import { View, ToastAndroid } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useEffect } from 'react';
 import CustomButton from '@/components/CustomButton';
@@ -47,7 +47,7 @@ const App = () => {
   // }, [hasShareIntent]);
 
   return (
-    <View className="flex-1 items-center justify-center">
+    <View className="flex-1  items-center justify-center">
       <CustomButton onPress={() => router.push('/news')} title="Read news" />
     </View>
   );

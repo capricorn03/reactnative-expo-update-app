@@ -1,4 +1,5 @@
 import { Slot, useRouter } from 'expo-router';
+import { Stack } from 'expo-router/stack';
 
 import { ShareIntentProvider } from 'expo-share-intent';
 
@@ -17,7 +18,24 @@ export default function Rootlayout() {
           }),
       }}
     >
-      <Slot />
+      <Stack>
+        <Stack.Screen
+          name="(tabs)"
+          options={{
+            headerShown: false,
+            statusBarAnimation: 'fade',
+            statusBarStyle: 'auto',
+          }}
+        />
+        <Stack.Screen
+          name="news/[id]"
+          options={{
+            headerShown: false,
+            statusBarAnimation: 'fade',
+            statusBarStyle: 'auto',
+          }}
+        />
+      </Stack>
     </ShareIntentProvider>
   );
 }
